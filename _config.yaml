@@ -4,6 +4,7 @@ description: >-
   Exploring mathematical concepts, proofs, and applications
 baseurl: "/arifeen_blogs"
 url: "https://arifeendipto.github.io"
+permalink: /:year/:month/:day/:title/
 github_username: arifeendipto
 
 markdown: kramdown
