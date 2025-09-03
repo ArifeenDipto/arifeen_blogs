@@ -4,19 +4,22 @@ title: About
 permalink: /about/
 ---
 
-Welcome to my mathematics blog! I'm passionate about exploring the beauty and elegance of mathematical concepts.
-
 ## About Me
-[Write about yourself, your mathematical background, interests, etc.]
 
-## What I Write About
-This blog covers various mathematical topics including:
-- Pure Mathematics
-- Applied Mathematics
-- Mathematical Proofs and Problem Solving
-- Connections between Math and Other Fields
+Welcome! I'm Arifeen, and I'm passionate about mathematics and sharing mathematical knowledge.
 
-## Contact
+## What You'll Find Here
+
+This blog covers:
+- **Pure Mathematics** - Algebra, Analysis, Number Theory
+- **Mathematical Proofs** - Step-by-step explanations
+- **Problem Solving** - Techniques and strategies
+- **Applications** - How math connects to the real world
+
+## Get In Touch
+
 Feel free to reach out if you have questions or want to discuss mathematics!
 
-[Your contact information]
+---
+
+*Built with Jekyll and hosted on GitHub Pages*

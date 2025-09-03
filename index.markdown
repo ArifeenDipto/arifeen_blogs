@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Mathematics Blog
+title: Home
 ---
 
 Welcome to my mathematics blog where I explore the fascinating world of mathematical concepts, proofs, and applications.
