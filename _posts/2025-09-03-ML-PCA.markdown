@@ -61,7 +61,7 @@ This diagonal matrix contains our eigenvalues, showing how the matrix stretches 
 
 ## Visual Interpretation
 
-![3D Eigenvector Visualization]({{ site.baseurl }}/images/eigenvectors_3d_plot.jpg)
+![3D Eigenvector Visualization](/arifeen_blogs/images/eigenvectors_3d_plot.jpg)
 
 *Figure 1: 3D visualization of the eigenvectors for matrix A. The red vector (λ=0) represents the null space, the green vector (λ=1) shows the unchanged direction, and the blue vector (λ=3) indicates the direction of maximum stretching.*
 
