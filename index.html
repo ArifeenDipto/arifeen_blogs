@@ -246,6 +246,17 @@
 
         <section class="blog-posts" id="posts">
             <h2>Latest Blog Posts</h2>
+            <!-- Debug info -->
+<div style="background: yellow; padding: 10px; margin: 10px 0; font-family: monospace;">
+    <strong>Debug Info:</strong><br>
+    Posts found: {{ site.posts.size }}<br>
+    {% for post in site.posts %}
+    Title: "{{ post.title }}"<br>
+    URL: {{ post.url }}<br>
+    Full URL: {{ site.url }}{{ site.baseurl }}{{ post.url }}<br>
+    ---<br>
+    {% endfor %}
+</div>
             <div class="post-grid">
                 <!-- Sample blog posts - replace with your actual posts -->
                 <article class="post-card">
