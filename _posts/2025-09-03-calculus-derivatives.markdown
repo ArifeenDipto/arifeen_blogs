@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Understanding Calculus: Derivatives and Applications"
+title: "Principal Component Analysis: Linear Algebra"
 date: 2025-09-03 10:00:00 +0000
 categories: calculus mathematics
-excerpt: "An exploration of derivatives, their geometric interpretation, and real-world applications in physics and engineering."
+excerpt: "An exploration of Eigen Decomposition, Singular Value Decomposition, and Low Rank Matrix Factorization"
 author: "Arifeen"
 ---
 
