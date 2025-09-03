@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Singular Value Decomposition"
+date: 2025-09-03 11:00:00 +0000
+categories: Machine Learning
+excerpt: "An exploration of SVD and Eckart Young Theorem"
+author: "Arifeen"
+---
+
+# Under
+Blaaa
