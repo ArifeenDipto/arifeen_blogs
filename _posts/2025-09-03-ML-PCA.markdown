@@ -2,7 +2,7 @@
 layout: post
 title: "Principal Component Analysis: Linear Algebra"
 date: 2025-09-03 10:00:00 +0000
-categories: calculus mathematics
+categories: Machine Learning
 excerpt: "An exploration of Eigen Decomposition, Singular Value Decomposition, and Low Rank Matrix Factorization"
 author: "Arifeen"
 ---
