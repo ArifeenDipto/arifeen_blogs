@@ -1,0 +1,19 @@
+title: Arifeen's Mathematics Blog
+email: your-email@example.com
+description: >-
+  Exploring mathematical concepts, proofs, and applications
+baseurl: ""
+url: "https://arifeendipto.github.io"
+github_username: arifeendipto
+
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
