@@ -7,116 +7,123 @@ excerpt: "An exploration of Eigen Decomposition, Singular Value Decomposition, a
 author: "Arifeen"
 ---
 
-# Understanding Calculus: Derivatives and Applications
+# Understanding Eigenvalues and Eigenvectors: A Visual Approach
 
-Welcome to this comprehensive exploration of derivatives! In this post, we'll dive deep into one of the most fundamental concepts in calculus.
+Eigenvalues and eigenvectors are fundamental concepts in linear algebra that reveal the intrinsic properties of linear transformations. In this post, we'll explore these concepts through both computational and visual approaches.
 
-## What is a Derivative?
+## The Matrix Under Investigation
 
-The derivative of a function represents the **instantaneous rate of change** at any given point. Mathematically, for a function $f(x)$, the derivative at point $a$ is defined as:
+Let's consider the following 3×3 matrix:
 
-$$f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$
+$$A = \begin{pmatrix}
+1 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 1
+\end{pmatrix}$$
 
-This limit gives us the slope of the tangent line to the curve at that specific point.
+This matrix represents a linear transformation in 3D space. Our goal is to find the directions (eigenvectors) that remain unchanged in direction when this transformation is applied, and the scaling factors (eigenvalues) associated with each direction.
 
-## Geometric Interpretation
+## Computing the Eigenvalues
 
-Imagine you're looking at a curve on a graph. If you zoom in really close to any point on that curve, it starts to look like a straight line. The slope of that line is exactly what the derivative tells us!
+To find the eigenvalues, we solve the characteristic equation:
 
-### Visual Understanding
+$$\det(A - \lambda I) = 0$$
 
-Think of driving on a winding road:
-- **Position** = where you are (the function value)
-- **Velocity** = how fast your position is changing (the derivative)
-- **Acceleration** = how fast your velocity is changing (the second derivative)
+For our matrix, this yields three eigenvalues:
+- $\lambda_1 = 0$
+- $\lambda_2 = 1$ 
+- $\lambda_3 = 3$
 
-## Common Derivative Rules
+## The Corresponding Eigenvectors
 
-Here are some essential derivative rules you should know:
+Each eigenvalue has an associated eigenvector that satisfies $A\mathbf{v} = \lambda\mathbf{v}$:
 
-### Power Rule
-For $f(x) = x^n$: 
-$$f'(x) = nx^{n-1}$$
+**For $\lambda_1 = 0$:**
+$$\mathbf{v_1} = \begin{pmatrix} -0.5774 \\ -0.5774 \\ -0.5774 \end{pmatrix}$$
 
-### Example: 
-- $\frac{d}{dx}(x^3) = 3x^2$
-- $\frac{d}{dx}(x^{1/2}) = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}}$
+**For $\lambda_2 = 1$:**
+$$\mathbf{v_2} = \begin{pmatrix} -0.7071 \\ 0.0000 \\ 0.7071 \end{pmatrix}$$
 
-### Product Rule
-For $f(x) = u(x) \cdot v(x)$:
-$$f'(x) = u'(x)v(x) + u(x)v'(x)$$
+**For $\lambda_3 = 3$:**
+$$\mathbf{v_3} = \begin{pmatrix} 0.4082 \\ -0.8165 \\ 0.4082 \end{pmatrix}$$
 
-### Chain Rule
-For composite functions $f(g(x))$:
-$$\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$$
+## Eigenvalue Matrix (Diagonal Form)
 
-## Real-World Applications
+When we diagonalize the matrix, we get:
 
-Derivatives aren't just abstract mathematical concepts—they're everywhere in the real world!
+$$\Lambda = \begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 3
+\end{pmatrix}$$
 
-### 1. Physics
-- **Velocity**: derivative of position with respect to time
-- **Acceleration**: derivative of velocity with respect to time
-- **Force**: related to the rate of change of momentum
+This diagonal matrix contains our eigenvalues, showing how the matrix stretches space along each eigenvector direction.
 
-### 2. Economics
-- **Marginal Cost**: derivative of total cost function
-- **Marginal Revenue**: derivative of revenue function
-- **Optimization**: finding maximum profit or minimum cost
+## Visual Interpretation
 
-### 3. Biology
-- **Population Growth**: rate at which populations change over time
-- **Drug Concentration**: how medication levels change in the bloodstream
+![3D Eigenvector Visualization]({{ site.baseurl }}/images/eigenvectors3dplot.jpeg)
 
-### 4. Engineering
-- **Heat Transfer**: rate of temperature change
-- **Signal Processing**: analyzing changing electrical signals
-- **Control Systems**: optimizing system responses
+*Figure 1: 3D visualization of the eigenvectors for matrix A. The red vector (λ=0) represents the null space, the green vector (λ=1) shows the unchanged direction, and the blue vector (λ=3) indicates the direction of maximum stretching.*
 
-## Worked Example: Projectile Motion
+The 3D visualization reveals the geometric meaning of these eigenvectors:
 
-Let's say a ball is thrown upward with initial velocity $v_0 = 20$ m/s. The height function is:
+- **Red vector ($\mathbf{v_1}$, $\lambda = 0$)**: This eigenvector lies in the direction where the transformation completely collapses the space. Any vector in this direction gets mapped to the zero vector.
 
-$$h(t) = -5t^2 + 20t + 2$$
+- **Green vector ($\mathbf{v_2}$, $\lambda = 1$)**: This direction remains completely unchanged by the transformation. Vectors along this direction maintain their magnitude and direction.
 
-**Finding Velocity:**
-$$v(t) = h'(t) = -10t + 20$$
+- **Blue vector ($\mathbf{v_3}$, $\lambda = 3$)**: Vectors in this direction get stretched by a factor of 3 while maintaining their direction.
 
-**Finding Acceleration:**
-$$a(t) = v'(t) = -10 \text{ m/s}^2$$
+## Physical Interpretation
 
-This tells us:
-- At $t = 0$: velocity is 20 m/s (upward)
-- At $t = 2$: velocity is 0 m/s (at maximum height)
-- At $t = 4$: velocity is -20 m/s (downward)
+This type of matrix often appears in:
 
-## Advanced Topics
+1. **Mechanical Systems**: The eigenvalues could represent natural frequencies of vibration
+2. **Heat Conduction**: Eigenvectors show principal directions of heat flow
+3. **Principal Component Analysis**: The eigenvectors indicate directions of maximum variance in data
 
-### Critical Points
-Points where $f'(x) = 0$ or $f'(x)$ is undefined. These often correspond to:
-- Local maxima and minima
-- Inflection points
-- Points of interest in optimization problems
+## Mathematical Properties
 
-### L'Hôpital's Rule
-When evaluating limits that result in $\frac{0}{0}$ or $\frac{\infty}{\infty}$:
+Several important properties emerge from this analysis:
 
-$$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$$
+- **Trace**: $\text{tr}(A) = 1 + 2 + 1 = 4 = 0 + 1 + 3$ (sum of eigenvalues)
+- **Determinant**: $\det(A) = 0 \times 1 \times 3 = 0$ (product of eigenvalues)
+- **Rank**: Since one eigenvalue is zero, the matrix has rank 2
 
-## Practice Problems
+## Applications in Data Science
 
-Try these on your own:
+Eigendecomposition is crucial in:
 
-1. Find $\frac{d}{dx}(3x^4 - 2x^2 + 7)$
-2. If $s(t) = t^3 - 6t^2 + 9t$, find when the velocity is zero
-3. Use the product rule to find $\frac{d}{dx}(x^2 \sin x)$
+- **Principal Component Analysis (PCA)**: Finding directions of maximum variance
+- **Spectral Clustering**: Using eigenvectors for data clustering
+- **Markov Chains**: Eigenvalues determine long-term behavior
+- **Quantum Mechanics**: Eigenvectors represent quantum states
+
+## Code Implementation
+
+Here's how you might compute this in Python:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the matrix
+A = np.array([[1, -1, 0],
+              [-1, 2, -1],
+              [0, -1, 1]])
+
+# Compute eigenvalues and eigenvectors
+eigenvalues, eigenvectors = np.linalg.eig(A)
+
+print("Eigenvalues:", eigenvalues)
+print("Eigenvectors:\n", eigenvectors)
+```
 
 ## Conclusion
 
-Derivatives are powerful tools that help us understand how things change. Whether you're studying the motion of planets, optimizing business operations, or analyzing biological processes, derivatives provide the mathematical framework to quantify and predict change.
+Understanding eigenvalues and eigenvectors provides deep insights into the behavior of linear transformations. The geometric interpretation through 3D visualization helps build intuition about these abstract concepts, making them more accessible for practical applications in engineering, physics, and data science.
 
-The beauty of calculus lies in its ability to make the infinitesimally small accessible and useful. As you continue your mathematical journey, you'll discover that derivatives are just the beginning of a rich and fascinating world of analysis.
+The zero eigenvalue in our example indicates that the transformation is singular (non-invertible), which has important implications for solving systems of linear equations and understanding the geometry of the transformation.
 
 ---
 
-*What questions do you have about derivatives? Feel free to explore more posts on this blog to deepen your understanding of mathematical concepts!*
+*This analysis demonstrates how mathematical concepts can be made more intuitive through computational tools and visualizations.*
