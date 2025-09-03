@@ -1,8 +1,324 @@
----
-layout: home
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arifeen's Mathematics Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Welcome to my mathematics blog where I explore the fascinating world of mathematical concepts, proofs, and applications.
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
 
-Browse through my latest posts below, or check out the [About](/about/) page to learn more about me and this blog.
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .welcome-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .welcome-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .blog-posts {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .blog-posts h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .post-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .post-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .post-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .post-card .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .post-card .read-more:hover {
+            color: #764ba2;
+        }
+
+        .post-card .read-more::after {
+            content: "→";
+            transition: transform 0.3s ease;
+        }
+
+        .post-card .read-more:hover::after {
+            transform: translateX(3px);
+        }
+
+        .math-symbols {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2rem;
+            color: #667eea;
+            opacity: 0.3;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .post-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Arifeen's Mathematics Blog</h1>
+            <p>Exploring the fascinating world of mathematical concepts, proofs, and applications</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="#posts">Blog Posts</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="welcome-section">
+            <h2>Welcome</h2>
+            <p>Welcome to my mathematics blog where I explore the fascinating world of mathematical concepts, proofs, and applications. Here you'll find in-depth discussions on various mathematical topics, from fundamental theorems to cutting-edge research.</p>
+            <p>Whether you're a student, educator, or fellow mathematics enthusiast, I hope you'll find something here that sparks your curiosity and deepens your understanding of this beautiful subject.</p>
+        </section>
+
+        <div class="math-symbols">∑ ∫ ∂ ∞ π ∆ ∇ ∈ ∀ ∃</div>
+
+        <section class="blog-posts" id="posts">
+            <h2>Latest Blog Posts</h2>
+            <div class="post-grid">
+                <!-- Sample blog posts - replace with your actual posts -->
+                <article class="post-card">
+                    <h3>Understanding Calculus: Derivatives and Applications</h3>
+                    <p>An exploration of derivatives, their geometric interpretation, and real-world applications in physics and engineering.</p>
+                    <a href="/posts/calculus-derivatives/" class="read-more">Read More</a>
+                </article>
+
+                <article class="post-card">
+                    <h3>Linear Algebra: Vector Spaces and Transformations</h3>
+                    <p>Dive deep into vector spaces, linear transformations, and their significance in modern mathematics and computer science.</p>
+                    <a href="/posts/linear-algebra-vectors/" class="read-more">Read More</a>
+                </article>
+
+                <article class="post-card">
+                    <h3>Number Theory: Prime Numbers and Cryptography</h3>
+                    <p>Discover the fascinating world of prime numbers and their crucial role in modern cryptographic systems.</p>
+                    <a href="/posts/number-theory-primes/" class="read-more">Read More</a>
+                </article>
+
+                <article class="post-card">
+                    <h3>Probability Theory: From Basics to Advanced Concepts</h3>
+                    <p>A comprehensive journey through probability theory, from basic concepts to advanced topics like stochastic processes.</p>
+                    <a href="/posts/probability-theory/" class="read-more">Read More</a>
+                </article>
+
+                <article class="post-card">
+                    <h3>Abstract Algebra: Groups, Rings, and Fields</h3>
+                    <p>An introduction to abstract algebraic structures and their applications in various branches of mathematics.</p>
+                    <a href="/posts/abstract-algebra/" class="read-more">Read More</a>
+                </article>
+
+                <article class="post-card">
+                    <h3>Mathematical Analysis: Real and Complex Functions</h3>
+                    <p>Explore the rigorous foundations of calculus through real analysis and venture into the complex plane.</p>
+                    <a href="/posts/mathematical-analysis/" class="read-more">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <p><strong>Arifeen's Mathematics Blog</strong></p>
+            <p>Exploring mathematical concepts, proofs, and applications</p>
+            <div class="contact-info">
+                <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <p>GitHub: <a href="https://github.com/arifeendipto">arifeendipto</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactive math symbols animation
+        const mathSymbols = document.querySelector('.math-symbols');
+        if (mathSymbols) {
+            mathSymbols.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            mathSymbols.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        }
+    </script>
+</body>
+</html>
