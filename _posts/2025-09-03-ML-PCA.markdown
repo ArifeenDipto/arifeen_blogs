@@ -71,8 +71,6 @@ V =
 $$
 
 
-# Eigen Decomposition Visualization
-
 This matrix is a **non-singular** matrix of size $3 \times 3$, and the **row space** and **column space** have the same dimension.  
 We can visualize the **eigenvectors** in 3D as shown in the figure.
 
@@ -80,13 +78,7 @@ We can visualize the **eigenvectors** in 3D as shown in the figure.
 
 <div style="flex: 1;">
   
-Eigen decomposition helps us identify the special directions (eigenvectors) along which the transformation by $A$ acts as simple scaling, determined by the eigenvalues.
-
-</div>
-
-<div style="flex: 1;">
-  
-![Eigenvectors in 3D](/home/dipto/blogs/arifeen_blogs/images/eigenvectors_3d_plot.jpg)
+![Eigenvectors in 3D](/images/eigenvectors_3d_plot.jpg)
 
 </div>
 
