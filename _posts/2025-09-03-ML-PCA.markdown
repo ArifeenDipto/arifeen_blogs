@@ -7,122 +7,28 @@ excerpt: "An exploration of Eigen Decomposition, Singular Value Decomposition, a
 author: "Arifeen"
 ---
 
-# Understanding Eigenvalues and Eigenvectors: A Visual Approach
+# Introduction
 
-Eigenvalues and eigenvectors are fundamental concepts in linear algebra that reveal the intrinsic properties of linear transformations. In this post, we'll explore these concepts through both computational and visual approaches.
+This post assumes that the readers are familiar with Eigen value and Eigen vectors, Eigen decomposition, Singular value decomposition, Matrix norm, correlation, mean and variance. Although, I briefly discussed these concepts but having a full understanding may help you understand more clearly. 
 
-## The Matrix Under Investigation
+# Eigenvectors and Eigenvalues
 
-Let's consider the following 3×3 matrix:
+Let’s say we have a vector $v \in \mathbb{R}^{3 \times 1}$.  
+When we multiply this vector by a matrix $A \in \mathbb{R}^{3 \times 3}$, the result $Av$ may change the **direction**, the **length (norm)**, or both.
 
-$$A = \begin{pmatrix}
-1 & -1 & 0 \\
--1 & 2 & -1 \\
-0 & -1 & 1
-\end{pmatrix}$$
+- If $A$ is an **orthogonal matrix**, the length of $v$ is preserved, but the direction may change (like a rotation or reflection).  
+- However, if there exists a nonzero vector $v$ such that $Av$ points in the **same direction** as $v$ (possibly scaled), then $v$ is called an **eigenvector** of $A$.
 
-This matrix represents a linear transformation in 3D space. Our goal is to find the directions (eigenvectors) that remain unchanged in direction when this transformation is applied, and the scaling factors (eigenvalues) associated with each direction.
+Formally, eigenvectors and eigenvalues satisfy:
 
-## Computing the Eigenvalues
+$$
+Av = \lambda v
+$$
 
-To find the eigenvalues, we solve the characteristic equation:
+where:
+- $v \neq 0$ is the **eigenvector**,  
+- $\lambda \in \mathbb{R}$ is the corresponding **eigenvalue**.
 
-$$\det(A - \lambda I) = 0$$
-
-For our matrix, this yields three eigenvalues:
-- $\lambda_1 = 0$
-- $\lambda_2 = 1$ 
-- $\lambda_3 = 3$
-
-## The Corresponding Eigenvectors
-
-Each eigenvalue has an associated eigenvector that satisfies $A\mathbf{v} = \lambda\mathbf{v}$:
-
-**For $\lambda_1 = 0$:**
-$$\mathbf{v_1} = \begin{pmatrix} -0.5774 \\ -0.5774 \\ -0.5774 \end{pmatrix}$$
-
-**For $\lambda_2 = 1$:**
-$$\mathbf{v_2} = \begin{pmatrix} -0.7071 \\ 0.0000 \\ 0.7071 \end{pmatrix}$$
-
-**For $\lambda_3 = 3$:**
-$$\mathbf{v_3} = \begin{pmatrix} 0.4082 \\ -0.8165 \\ 0.4082 \end{pmatrix}$$
-
-## Eigenvalue Matrix (Diagonal Form)
-
-When we diagonalize the matrix, we get:
-
-$$\Lambda = \begin{pmatrix}
-0 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 3
-\end{pmatrix}$$
-
-This diagonal matrix contains our eigenvalues, showing how the matrix stretches space along each eigenvector direction.
-
-## Visual Interpretation
-
-![3D Eigenvector Visualization](/arifeen_blogs/images/eigenvectors_3d_plot.jpg)
-
-*Figure 1: 3D visualization of the eigenvectors for matrix A. The red vector (λ=0) represents the null space, the green vector (λ=1) shows the unchanged direction, and the blue vector (λ=3) indicates the direction of maximum stretching.*
-
-The 3D visualization reveals the geometric meaning of these eigenvectors:
-
-- **Red vector ($\mathbf{v_1}$, $\lambda = 0$)**: This eigenvector lies in the direction where the transformation completely collapses the space. Any vector in this direction gets mapped to the zero vector.
-
-- **Green vector ($\mathbf{v_2}$, $\lambda = 1$)**: This direction remains completely unchanged by the transformation. Vectors along this direction maintain their magnitude and direction.
-
-- **Blue vector ($\mathbf{v_3}$, $\lambda = 3$)**: Vectors in this direction get stretched by a factor of 3 while maintaining their direction.
-
-## Physical Interpretation
-
-This type of matrix often appears in:
-
-1. **Mechanical Systems**: The eigenvalues could represent natural frequencies of vibration
-2. **Heat Conduction**: Eigenvectors show principal directions of heat flow
-3. **Principal Component Analysis**: The eigenvectors indicate directions of maximum variance in data
-
-## Mathematical Properties
-
-Several important properties emerge from this analysis:
-
-- **Trace**: $\text{tr}(A) = 1 + 2 + 1 = 4 = 0 + 1 + 3$ (sum of eigenvalues)
-- **Determinant**: $\det(A) = 0 \times 1 \times 3 = 0$ (product of eigenvalues)
-- **Rank**: Since one eigenvalue is zero, the matrix has rank 2
-
-## Applications in Data Science
-
-Eigendecomposition is crucial in:
-
-- **Principal Component Analysis (PCA)**: Finding directions of maximum variance
-- **Spectral Clustering**: Using eigenvectors for data clustering
-- **Markov Chains**: Eigenvalues determine long-term behavior
-- **Quantum Mechanics**: Eigenvectors represent quantum states
-
-## Code Implementation
-
-Here's how you might compute this in Python:
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Define the matrix
-A = np.array([[1, -1, 0],
-              [-1, 2, -1],
-              [0, -1, 1]])
-
-# Compute eigenvalues and eigenvectors
-eigenvalues, eigenvectors = np.linalg.eig(A)
-
-print("Eigenvalues:", eigenvalues)
-print("Eigenvectors:\n", eigenvectors)
-```
-
-## Conclusion
-
-Understanding eigenvalues and eigenvectors provides deep insights into the behavior of linear transformations. The geometric interpretation through 3D visualization helps build intuition about these abstract concepts, making them more accessible for practical applications in engineering, physics, and data science.
-
-The zero eigenvalue in our example indicates that the transformation is singular (non-invertible), which has important implications for solving systems of linear equations and understanding the geometry of the transformation.
 
 ---
 
