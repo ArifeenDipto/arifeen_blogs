@@ -29,10 +29,7 @@ where:
 - $v \neq 0$ is the **eigenvector**,  
 - $\lambda \in \mathbb{R}$ is the corresponding **eigenvalue**.
 
-Lets see an example a matrix and its **eigenvectors**. 
-# Example: Eigen Decomposition
-
-Given the matrix:
+Lets see an example of a matrix and its **eigenvectors**. 
 
 $$
 A =
@@ -41,22 +38,14 @@ A =
 -1 & 2 & -1 \\
 0 & -1 & 1
 \end{bmatrix}
-$$
-
-The eigenvectors are:
-
-$$
+\quad
 V =
 \begin{bmatrix}
 -0.5774 & -0.7071 & 0.4082 \\
 -0.5774 &  0.0000 & -0.8165 \\
 -0.5774 &  0.7071 & 0.4082
 \end{bmatrix}
-$$
-
-And the eigenvalue matrix is:
-
-$$
+\quad
 \Lambda =
 \begin{bmatrix}
 0.0000 & 0 & 0 \\
@@ -64,6 +53,7 @@ $$
 0 & 0 & 3.0000
 \end{bmatrix}
 $$
+
 
 ---
 
