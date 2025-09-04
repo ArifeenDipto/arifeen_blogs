@@ -74,13 +74,9 @@ $$
 This matrix is a **non-singular** matrix of size $3 \times 3$, and the **row space** and **column space** have the same dimension.  
 We can visualize the **eigenvectors** in 3D as shown in the figure.
 
-<div style="display: flex; align-items: center; gap: 20px;">
-  <div style="flex: 1;">
-    <img src="./images/eigenvectors_3d_plot.jpg" 
-         alt="Eigenvectors in 3D" 
-         style="width: 60%; height: auto;">
-  </div>
-</div>
+<p align="center">
+  <img src="./images/eigenvectors_3d_plot.jpg" alt="Eigenvectors in 3D" width="200">
+</p>
 
 ---
 
