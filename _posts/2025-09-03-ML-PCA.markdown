@@ -40,7 +40,7 @@ $$
 
 where $V$ is the matrix of eigenvectors and $\Lambda$ is the diagonal matrix of eigenvalues.
 
-##Example
+## Example
 Now, lets see an example of a matrix and its **eigenvectors**. 
 
 $$
