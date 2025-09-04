@@ -29,7 +29,19 @@ where:
 - $v \neq 0$ is the **eigenvector**,  
 - $\lambda \in \mathbb{R}$ is the corresponding **eigenvalue**.
 
-Lets see an example of a matrix and its **eigenvectors**. 
+#Eigen decomposition
+
+Eigen decomposition is a way of breaking down a square matrix into its eigenvectors and eigenvalues.  
+For a matrix $A \in \mathbb{R}^{n \times n}$, it can be written as:
+
+$$
+A = V \Lambda V^{-1}
+$$
+
+where $V$ is the matrix of eigenvectors and $\Lambda$ is the diagonal matrix of eigenvalues.
+
+##Example
+Now, lets see an example of a matrix and its **eigenvectors**. 
 
 $$
 A =
