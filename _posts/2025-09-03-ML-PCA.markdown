@@ -50,23 +50,23 @@ Now, lets see an example of a matrix and its **eigenvectors**.
 $$
 A =
 \begin{bmatrix}
-1 & -1 & 0 \\
+1.5 & -1 & 0 \\
 -1 & 2 & -1 \\
 0 & -1 & 1
 \end{bmatrix}
 \quad
 V =
 \begin{bmatrix}
--0.5774 & -0.7071 & 0.4082 \\
--0.5774 &  0.0000 & -0.8165 \\
--0.5774 &  0.7071 & 0.4082
+-0.4320 & 0.7563 & -0.4913 \\
+-0.5932 &  0.1720 & 0.7864 \\
+-0.6793 &  -0.6312 & -0.3744
 \end{bmatrix}
 \quad
 \Lambda =
 \begin{bmatrix}
-0.0000 & 0 & 0 \\
-0 & 1.0000 & 0 \\
-0 & 0 & 3.0000
+ 0.1267 & 0 & 0 \\
+0 & 1.2725  & 0 \\
+0 & 0 & 3.1007
 \end{bmatrix}
 $$
 
@@ -75,7 +75,7 @@ This matrix is a **non-singular** matrix of size $3 \times 3$, and the **row spa
 We can visualize the **eigenvectors** in 3D as shown in the figure.
 
 <p align="center">
-  <img src="/images/eigenvectors_3d_plot.jpg" alt="Eigenvectors in 3D" width="400">
+  <img src="/images/eigviz.jpg" alt="Eigenvectors in 3D" width="400">
 </p>
 
 ---
