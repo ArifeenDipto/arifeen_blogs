@@ -9,12 +9,12 @@ author: "Arifeen"
 
 # Introduction
 
-This post assumes that the readers are familiar with Eigen value and Eigen vectors, Eigen decomposition, Singular value decomposition, Matrix norm, correlation, mean and variance. Although, I briefly discussed these concepts but having a full understanding may help you understand more clearly. 
+This post assumes that readers are already familiar with the concepts of **eigenvalues**, **eigenvectors**, **eigen decomposition**, **singular value decomposition (SVD)**, **matrix norms**, **four fundamental spaces (row, column, null and left null) of a matrix**,**correlation**, **mean**, and **variance**. Although these topics are briefly discussed here, having a solid understanding of them will help you follow the explanations more clearly.
+
 
 # Eigenvectors and Eigenvalues
 
-Let’s say we have a vector $v \in \mathbb{R}^{3 \times 1}$.  
-When we multiply this vector by a matrix $A \in \mathbb{R}^{3 \times 3}$, the result $Av$ may change the **direction**, the **length (norm)**, or both.
+Let’s say we have a vector $v \in \mathbb{R}^{3 \times 1}$. When we multiply this vector by a matrix $A \in \mathbb{R}^{3 \times 3}$, the resultannt vector $Av$ may change the **direction**, the **length (norm)**, or both.
 
 - If $A$ is an **orthogonal matrix**, the length of $v$ is preserved, but the direction may change (like a rotation or reflection).  
 - However, if there exists a nonzero vector $v$ such that $Av$ points in the **same direction** as $v$ (possibly scaled), then $v$ is called an **eigenvector** of $A$.
@@ -29,6 +29,41 @@ where:
 - $v \neq 0$ is the **eigenvector**,  
 - $\lambda \in \mathbb{R}$ is the corresponding **eigenvalue**.
 
+Lets see an example a matrix and its **eigenvectors**. 
+# Example: Eigen Decomposition
+
+Given the matrix:
+
+$$
+A =
+\begin{bmatrix}
+1 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 1
+\end{bmatrix}
+$$
+
+The eigenvectors are:
+
+$$
+V =
+\begin{bmatrix}
+-0.5774 & -0.7071 & 0.4082 \\
+-0.5774 &  0.0000 & -0.8165 \\
+-0.5774 &  0.7071 & 0.4082
+\end{bmatrix}
+$$
+
+And the eigenvalue matrix is:
+
+$$
+\Lambda =
+\begin{bmatrix}
+0.0000 & 0 & 0 \\
+0 & 1.0000 & 0 \\
+0 & 0 & 3.0000
+\end{bmatrix}
+$$
 
 ---
 
