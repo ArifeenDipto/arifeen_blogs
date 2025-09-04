@@ -37,6 +37,10 @@ For a matrix $A \in \mathbb{R}^{n \times n}$, it can be written as:
 $$
 A = V \Lambda V^{-1}
 $$
+or,
+$$
+\Lambda = V A V^{-1}
+$$
 
 where $V$ is the matrix of eigenvectors and $\Lambda$ is the diagonal matrix of eigenvalues.
 
@@ -66,6 +70,27 @@ V =
 \end{bmatrix}
 $$
 
+
+# Eigen Decomposition Visualization
+
+This matrix is a **non-singular** matrix of size $3 \times 3$, and the **row space** and **column space** have the same dimension.  
+We can visualize the **eigenvectors** in 3D as shown in the figure.
+
+<div style="display: flex; align-items: center; gap: 20px;">
+
+<div style="flex: 1;">
+  
+Eigen decomposition helps us identify the special directions (eigenvectors) along which the transformation by $A$ acts as simple scaling, determined by the eigenvalues.
+
+</div>
+
+<div style="flex: 1;">
+  
+![Eigenvectors in 3D](/home/dipto/blogs/arifeen_blogs/images/eigenvectors_3d_plot.jpg)
+
+</div>
+
+</div>
 
 ---
 
