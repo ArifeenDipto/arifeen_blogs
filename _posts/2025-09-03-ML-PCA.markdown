@@ -78,6 +78,7 @@ We can visualize the **eigenvectors** in 3D as shown in the figure.
   <img src="/images/eigviz.jpg" alt="Eigenvectors in 3D" width="400">
 </p>
 
+## Analysis
 
 From the figure, we can see the **eigenvectors** with their corresponding **eigenvalues**. An interesting observation is that this matrix is **symmetric**, and for **symmetric** matrices, the **eigenvectors** are always orthogonal to each other. This orthogonality property is a fundamental characteristic of **symmetric** matrices: when $A = A^T$, the eigenvectors corresponding to different eigenvalues form an orthogonal basis for the vector space. We can verify this by computing the dot products between any pair of eigenvectors, which will be approximately zero (within numerical precision). In contrast, if the matrix were not **symmetric**, we would generally not obtain orthogonal eigenvectors. Non-symmetric matrices can have eigenvectors that point in arbitrary directions relative to each other,
 ---
